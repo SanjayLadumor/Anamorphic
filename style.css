@@ -1,0 +1,2230 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-x: hidden;
+  /* background-color: black; */
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Titillium+Web:wght@900&display=swap');
+
+body {
+  background-color: #050505;
+  /* Deep black to make the metal pop */
+}
+
+.header-container {
+  /* padding: 60px 20px; */
+  /* text-align: center; */
+  /* display: none; */
+}
+
+.doom-title {
+  position: absolute;
+  cursor: default;
+  /* z-index: 10; */
+  top: 48%;
+  font-family: 'Titillium Web', sans-serif;
+  line-height: 0.9;
+}
+
+.top-text {
+  font-family: 'UnifrakturMaguntia', serif;
+  font-size: 1.2rem;
+  color: #a0a0a0;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-left: 5px;
+  /* text-transform: uppercase; */
+}
+
+.bottom-text {
+  font-family: 'UnifrakturMaguntia', serif;
+  font-weight: 800;
+  font-size: 1.2rem;
+  color: #a0a0a0;
+  letter-spacing: 2px;
+  margin-top: 4px;
+  position: relative;
+  left: 90%;
+  /* text-transform: uppercase; */
+}
+
+.main-title {
+  font-size: 5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  position: relative;
+
+  /* The Metallic Texture */
+  background: linear-gradient(180deg,
+      #333 0%,
+      #eee 45%,
+      #555 50%,
+      #999 55%,
+      #222 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* The Shadow & Bevel Effect */
+  filter: drop-shadow(0px 0px 2px rgba(255, 255, 255, 0.3)) drop-shadow(5px 5px 15px rgba(0, 0, 0, 1));
+
+  /* Sinister Green Glow (Doctor Doom's Influence) */
+  text-shadow: 0 0 40px rgba(0, 255, 68, 0.2);
+}
+
+/* Adding the "Green Energy Crackle" behind the text */
+.main-title::after {
+  content: 'DOOMSDAY';
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px rgba(0, 255, 102, 0.717);
+  filter: blur(8px);
+  animation: radiation 2s infinite alternate;
+}
+
+@keyframes radiation {
+  from {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+
+  to {
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
+}
+
+:root {
+  --mouse-x: 50%;
+  --mouse-y: 50%;
+}
+
+.dune {
+  position: absolute;
+  top: 70%;
+  margin-left: 5px;
+  /* width: 80%; */
+  max-width: 500px;
+  cursor: default;
+
+  font-family: 'Space Grotesk', 'Orbitron', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  /* Essential for the Dune 'vastness' feel */
+
+  /* Colors */
+  color: #E9CB8E;
+  /* Primary Sand Gold */
+  text-shadow: 0 0 10px rgba(233, 203, 142, 0.4);
+  /* Soft spice-glow */
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+
+.loading-stories {
+  /* Cinematic Typography */
+  font-family: 'Archivo Black', sans-serif;
+  /* High-impact, bold lines */
+  font-size: 2rem;
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: #ffffff;
+  right: 0;
+  text-align: end;
+  position: absolute;
+  top: 45%;
+  cursor: default;
+
+  /* Modern Shadow Effect */
+  text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.5);
+
+  max-width: 400px;
+  margin-left: auto;
+}
+
+.loading-text {
+  display: block;
+  font-size: 2.8rem;
+  margin-top: 10px;
+  color: #00ff88;
+
+  /* 2026 Gradient Trend: Blue to Purple */
+  background: linear-gradient(to left, #51e2f5, #8458B3);
+  /* -webkit-background-clip: text; */
+  background-clip: text;
+  color: transparent;
+
+  /* Kinetic Animation: Subtle breathing effect */
+  /* animation: pulseLoading 2s ease-in-out infinite; */
+}
+
+@keyframes pulseLoading {
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.7;
+    transform: scale(0.98);
+  }
+}
+
+/* This is of Background Effect */
+
+.image-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: #000;
+  z-index: -1;
+}
+
+.base-image,
+.reveal-image {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+}
+
+.base-image {
+  background-image: url('Spiderman.png');
+}
+
+.reveal-image {
+  background-image: url('loki.jpg');
+  /* The Secret Sauce: apply the SVG filter for the watery edge */
+  /* filter: url(#liquid-filter);  */
+
+  /* Masking with a feathered edge for a "pool" look */
+  -webkit-mask-image: radial-gradient(circle 180px at var(--mouse-x) var(--mouse-y),
+      black 0%,
+      rgba(0, 0, 0, 0.5) 70%,
+      transparent 100%);
+  mask-image: radial-gradient(circle 150px at var(--mouse-x) var(--mouse-y),
+      black 0%,
+      rgba(0, 0, 0, 0.5) 70%,
+      transparent 100%);
+}
+
+/* Page 2 Mask Effect */
+
+.section-2 .base-image {
+  background-image: url('captain\ america.jpg');
+}
+
+.section-2 .reveal-image {
+  background-image: url('ironmann.jpg');
+}
+
+
+/* Website Starts From Here  */
+
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+
+.subtitle {
+  top: 100%;
+  color: rgba(240, 248, 255, 0.724);
+  position: absolute;
+  cursor: default;
+  justify-self: center;
+  font-size: 1.8rem;
+  font-family: "Fjalla One", 'Inter';
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  animation: cubic-bezier(0.47, 0, 0.745, 0.715);
+}
+
+.title {
+  position: absolute;
+  top: 100%;
+  justify-self: center;
+  cursor: default;
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  font-size: 10vw;
+  text-transform: uppercase;
+  background: linear-gradient(to right,
+      #434343 0%,
+      #ffffff 50%,
+      #434343 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 5s linear infinite;
+
+  /* The "Heavy" Factor: Multiple Shadow Layers */
+  filter: drop-shadow(0px 15px 30px rgba(0, 0, 0, 0.5));
+  letter-spacing: -0.05em;
+  /* Tight, aggressive spacing */
+}
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.firstline {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  color: azure;
+  margin-top: 20px;
+  font-size: 1.5rem;
+  text-align: center;
+  position: absolute;
+  top: 180%;
+  justify-self: center;
+  cursor: default;
+}
+
+.secondline {
+  position: absolute;
+  top: 190%;
+  justify-self: center;
+  cursor: default;
+  color: gainsboro;
+  font-family: 'Inter', sans-serif;
+  font-weight: 200;
+  font-size: 0.8rem;
+  /* color: rgba(255, 255, 255, 0.4); */
+  letter-spacing: 0.8rem;
+  text-transform: uppercase;
+}
+
+.sub-subheading-ghost::before {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 0 auto 10px;
+  /* Centered line above the text */
+}
+
+/* Month Seperator */
+
+/* Updated Month Separator */
+.month-separator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 50px 5vw 50px 5vw; 
+    margin: 0;
+    position: relative;
+    clear: both;
+    cursor: default;
+}
+
+.month-name {
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+    font-size: clamp(1rem, 2vw, 1.5rem); /* Scales based on screen size */
+    text-transform: uppercase;
+    letter-spacing: 1.5rem;
+    color: #ffffff;
+    text-align: center;
+    padding: 0 40px;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    white-space: nowrap;
+    /* This ensures the wide letter spacing doesn't push the text to the right */
+    text-indent: 1.5rem; 
+}
+
+.month-line {
+    flex-grow: 1;
+    height: 1px;
+    background: linear-gradient(to right, 
+        transparent, 
+        rgba(255, 255, 255, 0.3), 
+        transparent
+    );
+}
+/* Cards From Here  */
+
+/* Movie 1  */
+
+/* General Movie Card Container */
+.movie1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+  width: 100%;
+}
+
+/* Unified Info Box (The Card) */
+.info1 {
+  height: 250px;
+  width: 200px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 255, 136, 0.3);
+  display: flex;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  cursor: pointer;
+  position: relative;
+}
+
+/* Image styling - Stays on the left */
+.info1 img {
+  height: 100%;
+  width: 200px;
+  min-width: 200px;
+  object-fit: cover;
+  object-position: center;
+  filter: grayscale(80%);
+}
+
+/* Text Content - Hidden on the right */
+.movie1-details {
+  opacity: 0;
+  padding: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 300px;
+  transition: all 0.5s ease;
+  white-space: nowrap;
+  align-items: center;
+}
+
+.movie1-details h3 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  color: #00ff88;
+  margin-bottom: 10px;
+}
+
+.movie1-details pre {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: gainsboro;
+}
+
+/* HOVER STATE */
+.info1:hover {
+  width: 550px;
+  /* 200px image + 350px text area */
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 30px 30px 30px rgba(0, 255, 136, 0.2);
+}
+
+.info1:hover img {
+  filter: grayscale(0%);
+}
+
+.info1:hover .movie1-details {
+  opacity: 1;
+}
+
+/* Movie 2 */
+
+.movie2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+  width: 100%;
+}
+
+/* Unified Info Box (The Card) */
+.info2 {
+  height: 250px;
+  width: 200px;
+  /* Starting width */
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgb(203, 117, 11);
+  display: flex;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  cursor: pointer;
+  position: relative;
+}
+
+/* Image styling - Stays on the left */
+.info2 img {
+  height: 100%;
+  width: 200px;
+  min-width: 200px;
+  object-fit: cover;
+  object-position: center;
+  filter: grayscale(80%);
+}
+
+/* Text Content - Hidden on the right */
+.movie2-details {
+  opacity: 0;
+  padding: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 300px;
+  align-items: center;
+  transition: all 0.5s ease;
+  white-space: nowrap;
+}
+
+.movie2-details h3 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  color: rgb(203, 117, 11);
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.movie2-details pre {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: gainsboro;
+}
+
+/* HOVER STATE */
+.info2:hover {
+  width: 550px;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 30px 30px 30px rgba(203, 117, 11, 0.3);
+}
+
+.info2:hover img {
+  filter: grayscale(0%);
+}
+
+.info2:hover .movie2-details {
+  opacity: 1;
+}
+
+
+/* Movie 3 */
+
+.movie3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* margin-bottom: 50px; */
+  width: 100%;
+}
+
+/* Unified Info Box (The Card) */
+.info3 {
+  height: 250px;
+  width: 200px;
+  /* Starting width */
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 255, 136, 0.3);
+  display: flex;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  cursor: pointer;
+  position: relative;
+}
+
+/* Image styling - Stays on the left */
+.info3 img {
+  height: 100%;
+  width: 200px;
+  min-width: 200px;
+  object-fit: cover;
+  object-position: center;
+  filter: grayscale(80%);
+}
+
+/* Text Content - Hidden on the right */
+.movie3-details {
+  opacity: 0;
+  padding: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 300px;
+  align-items: center;
+  transition: all 0.5s ease;
+  white-space: nowrap;
+}
+
+.movie3-details h3 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  color: red;
+  margin-bottom: 10px;
+}
+
+.movie3-details pre {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: gainsboro;
+}
+
+/* HOVER STATE */
+.info3:hover {
+  width: 550px;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 30px 30px 30px rgb(255, 0, 0, 0.3);
+}
+
+.info3:hover img {
+  filter: grayscale(0%);
+}
+
+.info3:hover .movie3-details {
+  opacity: 1;
+}
+
+
+/* Movie 4 */
+
+.movie4 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+  width: 100%;
+}
+
+/* Unified Info Box (The Card) */
+.info4 {
+  height: 250px;
+  width: 200px;
+  /* Starting width */
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid cadetblue;
+  display: flex;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  cursor: pointer;
+  position: relative;
+}
+
+/* Image styling - Stays on the left */
+.info4 img {
+  height: 100%;
+  width: 200px;
+  min-width: 200px;
+  object-fit: cover;
+  object-position: center;
+  filter: grayscale(80%);
+}
+
+/* Text Content - Hidden on the right */
+.movie4-details {
+  opacity: 0;
+  padding: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 300px;
+  align-items: center;
+  transition: all 0.5s ease;
+  white-space: nowrap;
+}
+
+.movie4-details h3 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  color: cadetblue;
+  margin-bottom: 10px;
+}
+
+.movie4-details pre {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: gainsboro;
+}
+
+/* HOVER STATE */
+.info4:hover {
+  width: 550px;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 30px 30px 30px rgb(95, 158, 160, 0.3);
+}
+
+.info4:hover img {
+  filter: grayscale(0%);
+}
+
+.info4:hover .movie4-details {
+  opacity: 1;
+}
+
+/* Movie 5 */
+
+.movie5 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+  width: 100%;
+}
+
+/* Unified Info Box (The Card) */
+.info5 {
+  height: 250px;
+  width: 200px;
+  /* Starting width */
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid cornflowerblue;
+  display: flex;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  cursor: pointer;
+  position: relative;
+}
+
+/* Image styling - Stays on the left */
+.info5 img {
+  height: 100%;
+  width: 200px;
+  min-width: 200px;
+  object-fit: cover;
+  object-position: center;
+  filter: grayscale(80%);
+}
+
+/* Text Content - Hidden on the right */
+.movie5-details {
+  opacity: 0;
+  padding: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 300px;
+  align-items: center;
+  transition: all 0.5s ease;
+  white-space: nowrap;
+}
+
+.movie5-details h3 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  color: cornflowerblue;
+  margin-bottom: 10px;
+}
+
+.movie5-details pre {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: gainsboro;
+}
+
+/* HOVER STATE */
+.info5:hover {
+  width: 550px;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 30px 30px 30px rgb(100, 149, 237, 0.3);
+}
+
+.info5:hover img {
+  filter: grayscale(0%);
+}
+
+.info5:hover .movie5-details {
+  opacity: 1;
+}
+
+/* Movie 6 */
+
+.movie6 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+  width: 100%;
+}
+
+/* Unified Info Box (The Card) */
+.info6 {
+  height: 250px;
+  width: 200px;
+  /* Starting width */
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid #a0a0a0;
+  display: flex;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  cursor: pointer;
+  position: relative;
+}
+
+/* Image styling - Stays on the left */
+.info6 img {
+  height: 100%;
+  width: 200px;
+  min-width: 200px;
+  object-fit: cover;
+  object-position: center;
+  filter: grayscale(80%);
+}
+
+/* Text Content - Hidden on the right */
+.movie6-details {
+  opacity: 0;
+  padding: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 300px;
+  align-items: center;
+  transition: all 0.5s ease;
+  white-space: nowrap;
+}
+
+.movie6-details h3 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  color: #a0a0a0;
+  margin-bottom: 10px;
+}
+
+.movie6-details pre {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: gainsboro;
+}
+
+/* HOVER STATE */
+.info6:hover {
+  width: 550px;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 30px 30px 30px rgb(160, 160, 160, 0.3);
+}
+
+.info6:hover img {
+  filter: grayscale(0%);
+}
+
+.info6:hover .movie6-details {
+  opacity: 1;
+}
+
+/* Movie 7 */
+
+.movie7 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* Unified Info Box (The Card) */
+.info7 {
+  height: 250px;
+  width: 200px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid #a0a0a0;
+  display: flex;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  cursor: pointer;
+  position: relative;
+}
+
+/* Image styling - Stays on the left */
+.info7 img {
+  height: 100%;
+  width: 200px;
+  min-width: 200px;
+  object-fit: cover;
+  object-position: center;
+  filter: grayscale(80%);
+}
+
+/* Text Content - Hidden on the right */
+.movie7-details {
+  opacity: 0;
+  padding: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 300px;
+  align-items: center;
+  transition: all 0.5s ease;
+  white-space: nowrap;
+}
+
+.movie7-details h3 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  color: darkorange;
+  margin-bottom: 10px;
+}
+
+.movie7-details pre {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: gainsboro;
+}
+
+/* HOVER STATE */
+.info7:hover {
+  width: 550px;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 30px 30px 30px rgb(255, 140, 0, 0.3);
+}
+
+.info7:hover img {
+  filter: grayscale(0%);
+}
+
+.info7:hover .movie7-details {
+  opacity: 1;
+}
+
+/* Movie 8 */
+
+.movie8 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+  width: 100%;
+}
+
+/* Unified Info Box (The Card) */
+.info8 {
+  height: 250px;
+  width: 200px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid #a0a0a0;
+  display: flex;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  cursor: pointer;
+  position: relative;
+}
+
+/* Image styling - Stays on the left */
+.info8 img {
+  height: 100%;
+  width: 200px;
+  min-width: 200px;
+  object-fit: cover;
+  object-position: center;
+  filter: grayscale(80%);
+}
+
+/* Text Content - Hidden on the right */
+.movie8-details {
+  opacity: 0;
+  padding: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 300px;
+  align-items: center;
+  transition: all 0.5s ease;
+  white-space: nowrap;
+}
+
+.movie8-details h3 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  color: darkorange;
+  margin-bottom: 10px;
+}
+
+.movie8-details pre {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: gainsboro;
+}
+
+/* HOVER STATE */
+.info8:hover {
+  width: 550px;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 30px 30px 30px rgb(255, 140, 0, 0.3);
+}
+
+.info8:hover img {
+  filter: grayscale(0%);
+}
+
+.info8:hover .movie8-details {
+  opacity: 1;
+}
+
+/* Movie 9 */
+
+.movie9 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+  width: 100%;
+}
+
+/* Unified Info Box (The Card) */
+.info9 {
+  height: 250px;
+  width: 200px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  cursor: pointer;
+  position: relative;
+}
+
+/* Image styling - Stays on the left */
+.info9 img {
+  height: 100%;
+  width: 200px;
+  min-width: 200px;
+  object-fit: cover;
+  object-position: center;
+  filter: grayscale(80%);
+}
+
+/* Text Content - Hidden on the right */
+.movie9-details {
+  opacity: 0;
+  padding: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 300px;
+  align-items: center;
+  transition: all 0.5s ease;
+  white-space: nowrap;
+}
+
+.movie9-details h3 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.3);
+  margin-bottom: 10px;
+}
+
+.movie9-details pre {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: gainsboro;
+}
+
+/* HOVER STATE */
+.info9:hover {
+  width: 550px;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 30px 30px 30px rgba(255, 255, 255, 0.3);
+}
+
+.info9:hover img {
+  filter: grayscale(0%);
+}
+
+.info9:hover .movie9-details {
+  opacity: 1;
+}
+
+/* Movie 10 */
+
+.movie10 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* Unified Info Box (The Card) */
+.info10 {
+  height: 250px;
+  width: 200px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid steelblue;
+  display: flex;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  cursor: pointer;
+  position: relative;
+}
+
+/* Image styling - Stays on the left */
+.info10 img {
+  height: 100%;
+  width: 200px;
+  min-width: 200px;
+  object-fit: cover;
+  object-position: center;
+  filter: grayscale(80%);
+}
+
+/* Text Content - Hidden on the right */
+.movie10-details {
+  opacity: 0;
+  padding: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 300px;
+  align-items: center;
+  transition: all 0.5s ease;
+  white-space: nowrap;
+}
+
+.movie10-details h3 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  color: steelblue;
+  margin-bottom: 10px;
+}
+
+.movie10-details pre {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: gainsboro;
+}
+
+/* HOVER STATE */
+.info10:hover {
+  width: 550px;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 30px 30px 30px rgb(70, 130, 180, 0.3);
+}
+
+.info10:hover img {
+  filter: grayscale(0%);
+}
+
+.info10:hover .movie10-details {
+  opacity: 1;
+}
+
+/* Movie 11 */
+
+.movie11 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* Unified Info Box (The Card) */
+.info11 {
+  height: 250px;
+  width: 200px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgb(214, 5, 5);
+  display: flex;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  cursor: pointer;
+  position: relative;
+}
+
+/* Image styling - Stays on the left */
+.info11 img {
+  height: 100%;
+  width: 200px;
+  min-width: 200px;
+  object-fit: cover;
+  object-position: center;
+  filter: grayscale(80%);
+}
+
+/* Text Content - Hidden on the right */
+.movie11-details {
+  opacity: 0;
+  padding: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 300px;
+  align-items: center;
+  transition: all 0.5s ease;
+  white-space: nowrap;
+}
+
+.movie11-details h3 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  color: rgb(214, 5, 5);
+  margin-bottom: 10px;
+}
+
+.movie11-details pre {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: gainsboro;
+}
+
+/* HOVER STATE */
+.info11:hover {
+  width: 550px;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 30px 30px 30px rgb(214, 5, 5, 0.3);
+}
+
+.info11:hover img {
+  filter: grayscale(0%);
+}
+
+.info11:hover .movie11-details {
+  opacity: 1;
+}
+
+/* Movie 12 */
+
+.movie12 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* Unified Info Box (The Card) */
+.info12 {
+  height: 250px;
+  width: 200px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid goldenrod;
+  display: flex;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  cursor: pointer;
+  position: relative;
+}
+
+/* Image styling - Stays on the left */
+.info12 img {
+  height: 100%;
+  width: 200px;
+  min-width: 200px;
+  object-fit: cover;
+  object-position: center;
+  filter: grayscale(80%);
+}
+
+/* Text Content - Hidden on the right */
+.movie12-details {
+  opacity: 0;
+  padding: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 300px;
+  align-items: center;
+  transition: all 0.5s ease;
+  white-space: nowrap;
+}
+
+.movie12-details h3 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  color: goldenrod;
+  margin-bottom: 10px;
+  font-size: 0.98rem;
+}
+
+.movie12-details pre {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: gainsboro;
+}
+
+/* HOVER STATE */
+.info12:hover {
+  width: 550px;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 30px 30px 30px rgb(218, 165, 32, 0.3);
+}
+
+.info12:hover img {
+  filter: grayscale(0%);
+}
+
+.info12:hover .movie12-details {
+  opacity: 1;
+}
+
+/* Movie 13 */
+
+.movie13 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+  width: 100%;
+}
+
+/* Unified Info Box (The Card) */
+.info13 {
+  height: 250px;
+  width: 200px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid white;
+  display: flex;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  cursor: pointer;
+  position: relative;
+}
+
+/* Image styling - Stays on the left */
+.info13 img {
+  height: 100%;
+  width: 200px;
+  min-width: 200px;
+  object-fit: cover;
+  object-position: center;
+  filter: grayscale(80%);
+}
+
+/* Text Content - Hidden on the right */
+.movie13-details {
+  opacity: 0;
+  padding: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 300px;
+  align-items: center;
+  transition: all 0.5s ease;
+  white-space: nowrap;
+}
+
+.movie13-details h3 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.movie13-details pre {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: gainsboro;
+}
+
+/* HOVER STATE */
+.info13:hover {
+  width: 550px;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 30px 30px 30px rgb(255, 255, 255, 0.3);
+}
+
+.info13:hover img {
+  filter: grayscale(0%);
+}
+
+.info13:hover .movie13-details {
+  opacity: 1;
+}
+
+/* Movie 14 */
+
+.movie14 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+  width: 100%;
+}
+
+/* Unified Info Box (The Card) */
+.info14 {
+  height: 250px;
+  width: 200px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid deepskyblue;
+  display: flex;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  cursor: pointer;
+  position: relative;
+}
+
+/* Image styling - Stays on the left */
+.info14 img {
+  height: 100%;
+  width: 200px;
+  min-width: 200px;
+  object-fit: cover;
+  object-position: center;
+  filter: grayscale(80%);
+}
+
+/* Text Content - Hidden on the right */
+.movie14-details {
+  opacity: 0;
+  padding: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 300px;
+  align-items: center;
+  transition: all 0.5s ease;
+  white-space: nowrap;
+}
+
+.movie14-details h3 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  color: deepskyblue;
+  margin-bottom: 10px;
+  font-size: 0.98rem;
+}
+
+.movie14-details pre {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: gainsboro;
+}
+
+/* HOVER STATE */
+.info14:hover {
+  width: 550px;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 30px 30px 30px rgb(0, 191, 255, 0.3);
+}
+
+.info14:hover img {
+  filter: grayscale(0%);
+}
+
+.info14:hover .movie14-details {
+  opacity: 1;
+}
+
+/* Movie 15 */
+
+.movie15 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* Unified Info Box (The Card) */
+.info15 {
+  height: 250px;
+  width: 200px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid dodgerblue;
+  display: flex;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  cursor: pointer;
+  position: relative;
+}
+
+/* Image styling - Stays on the left */
+.info15 img {
+  height: 100%;
+  width: 200px;
+  min-width: 200px;
+  object-fit: cover;
+  object-position: center;
+  filter: grayscale(80%);
+}
+
+/* Text Content - Hidden on the right */
+.movie15-details {
+  opacity: 0;
+  padding: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 300px;
+  align-items: center;
+  transition: all 0.5s ease;
+  white-space: nowrap;
+}
+
+.movie15-details h3 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  color: dodgerblue;
+  margin-bottom: 10px;
+}
+
+.movie15-details pre {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: gainsboro;
+}
+
+/* HOVER STATE */
+.info15:hover {
+  width: 550px;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 30px 30px 30px rgb(30, 144, 255, 0.3);
+}
+
+.info15:hover img {
+  filter: grayscale(0%);
+}
+
+.info15:hover .movie15-details {
+  opacity: 1;
+}
+
+/* Movie 16 */
+
+.movie16 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+  width: 100%;
+}
+
+/* Unified Info Box (The Card) */
+.info16 {
+  height: 250px;
+  width: 200px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid cyan;
+  display: flex;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  cursor: pointer;
+  position: relative;
+}
+
+/* Image styling - Stays on the left */
+.info16 img {
+  height: 100%;
+  width: 200px;
+  min-width: 200px;
+  object-fit: cover;
+  object-position: center;
+  filter: grayscale(80%);
+}
+
+/* Text Content - Hidden on the right */
+.movie16-details {
+  opacity: 0;
+  padding: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 300px;
+  align-items: center;
+  transition: all 0.5s ease;
+  white-space: nowrap;
+}
+
+.movie16-details h3 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  color: cyan;
+  margin-bottom: 10px;
+}
+
+.movie16-details pre {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: gainsboro;
+}
+
+/* HOVER STATE */
+.info16:hover {
+  width: 550px;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 30px 30px 30px rgb(0, 255, 255, 0.3);
+}
+
+.info16:hover img {
+  filter: grayscale(0%);
+}
+
+.info16:hover .movie16-details {
+  opacity: 1;
+}
+
+/* Movie 17 */
+
+.movie17 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+  width: 100%;
+}
+
+/* Unified Info Box (The Card) */
+.info17 {
+  height: 250px;
+  width: 200px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid odgerblue;
+  display: flex;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  cursor: pointer;
+  position: relative;
+}
+
+/* Image styling - Stays on the left */
+.info17 img {
+  height: 100%;
+  width: 200px;
+  min-width: 200px;
+  object-fit: cover;
+  object-position: center;
+  filter: grayscale(80%);
+}
+
+/* Text Content - Hidden on the right */
+.movie17-details {
+  opacity: 0;
+  padding: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 300px;
+  align-items: center;
+  transition: all 0.5s ease;
+  white-space: nowrap;
+}
+
+.movie17-details h3 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  color: dodgerblue;
+  margin-bottom: 10px;
+}
+
+.movie17-details pre {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: gainsboro;
+}
+
+/* HOVER STATE */
+.info17:hover {
+  width: 550px;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 30px 30px 30px rgb(30, 144, 255, 0.3);
+}
+
+.info17:hover img {
+  filter: grayscale(0%);
+}
+
+.info17:hover .movie17-details {
+  opacity: 1;
+}
+
+/* Movie 18 */
+
+.movie18 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+  width: 100%;
+}
+
+/* Unified Info Box (The Card) */
+.info18 {
+  height: 250px;
+  width: 200px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid lightsteelblue;
+  display: flex;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  cursor: pointer;
+  position: relative;
+}
+
+/* Image styling - Stays on the left */
+.info18 img {
+  height: 100%;
+  width: 200px;
+  min-width: 200px;
+  object-fit: cover;
+  object-position: center;
+  filter: grayscale(80%);
+}
+
+/* Text Content - Hidden on the right */
+.movie18-details {
+  opacity: 0;
+  padding: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 300px;
+  align-items: center;
+  transition: all 0.5s ease;
+  white-space: nowrap;
+}
+
+.movie18-details h3 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  color: lightsteelblue;
+  margin-bottom: 10px;
+}
+
+.movie18-details pre {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: gainsboro;
+}
+
+/* HOVER STATE */
+.info18:hover {
+  width: 550px;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 30px 30px 30px rgb(176, 196, 222, 0.3);
+}
+
+.info18:hover img {
+  filter: grayscale(0%);
+}
+
+.info18:hover .movie18-details {
+  opacity: 1;
+}
+
+.info18:hover {
+  box-shadow: 0 0 60px rgb(176, 196, 222, 1), 0 0 60px rgb(176, 196, 222, 0.5);
+}
+
+/* Movie 19 */
+
+.movie19 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* Unified Info Box (The Card) */
+.info19 {
+  height: 250px;
+  width: 200px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid chocolate;
+  display: flex;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  cursor: pointer;
+  position: relative;
+}
+
+/* Image styling - Stays on the left */
+.info19 img {
+  height: 100%;
+  width: 200px;
+  min-width: 200px;
+  object-fit: cover;
+  object-position: center;
+  filter: grayscale(80%);
+}
+
+/* Text Content - Hidden on the right */
+.movie19-details {
+  opacity: 0;
+  padding: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 300px;
+  align-items: center;
+  transition: all 0.5s ease;
+  white-space: nowrap;
+}
+
+.movie19-details h3 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  color: chocolate;
+  margin-bottom: 10px;
+}
+
+.movie19-details pre {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: gainsboro;
+}
+
+/* HOVER STATE */
+.info19:hover {
+  width: 550px;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 30px 30px 30px rgb(210, 105, 30, 0.3);
+}
+
+.info19:hover img {
+  filter: grayscale(0%);
+}
+
+.info19:hover .movie19-details {
+  opacity: 1;
+}
+
+.info19:hover {
+  box-shadow: 0 0 60px rgb(210, 105, 30, 1), 0 0 60px rgb(210, 105, 30, 0.5);
+}
+
+/* Movie 20 */
+
+.movie20 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* Unified Info Box (The Card) */
+.info20 {
+  height: 250px;
+  width: 200px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgb(244, 51, 16);
+  display: flex;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  cursor: pointer;
+  position: relative;
+}
+
+/* Image styling - Stays on the left */
+.info20 img {
+  height: 100%;
+  width: 200px;
+  min-width: 200px;
+  object-fit: cover;
+  object-position: center;
+  filter: grayscale(80%);
+}
+
+/* Text Content - Hidden on the right */
+.movie20-details {
+  opacity: 0;
+  padding: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 300px;
+  align-items: center;
+  transition: all 0.5s ease;
+  white-space: nowrap;
+}
+
+.movie20-details h3 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  color:rgb(244, 51, 16);
+  margin-bottom: 10px;
+}
+
+.movie20-details pre {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: gainsboro;
+}
+
+/* HOVER STATE */
+.info20:hover {
+  width: 550px;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 30px 30px 30px rgb(210, 105, 30, 0.3);
+}
+
+.info20:hover img {
+  filter: grayscale(0%);
+}
+
+.info20:hover .movie20-details {
+  opacity: 1;
+}
+
+/* Movie 21 */
+
+.movie21 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+  width: 100%;
+}
+
+/* Unified Info Box (The Card) */
+.info21 {
+  height: 250px;
+  width: 200px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid gainsboro;
+  display: flex;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  cursor: pointer;
+  position: relative;
+}
+
+/* Image styling - Stays on the left */
+.info21 img {
+  height: 100%;
+  width: 200px;
+  min-width: 200px;
+  object-fit: cover;
+  object-position: center;
+  filter: grayscale(80%);
+}
+
+/* Text Content - Hidden on the right */
+.movie21-details {
+  opacity: 0;
+  padding: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 300px;
+  align-items: center;
+  transition: all 0.5s ease;
+  white-space: nowrap;
+}
+
+.movie21-details h3 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  color:gainsboro;
+  margin-bottom: 10px;
+  font-size: 0.8rem;
+}
+
+.movie21-details pre {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: gainsboro;
+}
+
+/* HOVER STATE */
+.info21:hover {
+  width: 550px;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 30px 30px 30px rgb(220, 220, 220,0.3);
+}
+
+.info21:hover img {
+  filter: grayscale(0%);
+}
+
+.info21:hover .movie21-details {
+  opacity: 1;
+}
+
+/* Movie 22 */
+
+.movie22 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* Unified Info Box (The Card) */
+.info22 {
+  height: 250px;
+  width: 200px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid aqua;
+  display: flex;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  cursor: pointer;
+  position: relative;
+}
+
+/* Image styling - Stays on the left */
+.info22 img {
+  height: 100%;
+  width: 200px;
+  min-width: 200px;
+  object-fit: cover;
+  object-position: center;
+  filter: grayscale(80%);
+}
+
+/* Text Content - Hidden on the right */
+.movie22-details {
+  opacity: 0;
+  padding: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 300px;
+  align-items: center;
+  transition: all 0.5s ease;
+  white-space: nowrap;
+}
+
+.movie22-details h3 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  color:aqua;
+  margin-bottom: 10px;
+}
+
+.movie22-details pre {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: gainsboro;
+}
+
+/* HOVER STATE */
+.info22:hover {
+  width: 550px;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 30px 30px 30px rgb(0, 255, 255,0.3);
+}
+
+.info22:hover img {
+  filter: grayscale(0%);
+}
+
+.info22:hover .movie22-details {
+  opacity: 1;
+}
+
+.info22:hover {
+  box-shadow: 0 0 60px rgb(0, 255, 255, 1), 0 0 60px rgb(0, 255, 255, 0.5);
+}
+
+/* Movie 23 */
+
+.movie23 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+  width: 100%;
+}
+
+/* Unified Info Box (The Card) */
+.info23 {
+  height: 250px;
+  width: 200px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgb(100, 155, 18);
+  display: flex;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  cursor: pointer;
+  position: relative;
+}
+
+/* Image styling - Stays on the left */
+.info23 img {
+  height: 100%;
+  width: 200px;
+  min-width: 200px;
+  object-fit: cover;
+  object-position: center;
+  filter: grayscale(80%);
+}
+
+/* Text Content - Hidden on the right */
+.movie23-details {
+  opacity: 0;
+  padding: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 300px;
+  align-items: center;
+  transition: all 0.5s ease;
+  white-space: nowrap;
+}
+
+.movie23-details h3 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  color:rgb(100, 155, 18);
+  margin-bottom: 10px;
+}
+
+.movie23-details pre {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: gainsboro;
+}
+
+/* HOVER STATE */
+.info23:hover {
+  width: 550px;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 30px 30px 30px rgb(100, 155, 18,0.3);
+}
+
+.info23:hover img {
+  filter: grayscale(0%);
+}
+
+.info23:hover .movie23-details {
+  opacity: 1;
+}
+
+.info23:hover {
+  box-shadow: 0 0 60px rgb(100, 155, 18, 1), 0 0 60px rgb(100, 155, 18, 0.5);
+}
+
+/* Movie 24 */
+
+.movie24 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* Unified Info Box (The Card) */
+.info24 {
+  height: 250px;
+  width: 200px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgb(252, 84, 23);
+  display: flex;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  cursor: pointer;
+  position: relative;
+}
+
+/* Image styling - Stays on the left */
+.info24 img {
+  height: 100%;
+  width: 200px;
+  min-width: 200px;
+  object-fit: cover;
+  object-position: center;
+  filter: grayscale(80%);
+}
+
+/* Text Content - Hidden on the right */
+.movie24-details {
+  opacity: 0;
+  padding: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 300px;
+  align-items: center;
+  transition: all 0.5s ease;
+  white-space: nowrap;
+}
+
+.movie24-details h3 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  color:rgb(252, 84, 23);
+  margin-bottom: 10px;
+}
+
+.movie24-details pre {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: gainsboro;
+}
+
+/* HOVER STATE */
+.info24:hover {
+  width: 550px;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 30px 30px 30px rgb(252, 84, 23,0.3);
+}
+
+.info24:hover img {
+  filter: grayscale(0%);
+}
+
+.info24:hover .movie24-details {
+  opacity: 1;
+}
+
+.info24:hover {
+  box-shadow: 0 0 60px rgb(252, 84, 23, 1), 0 0 60px rgb(252, 84, 23, 0.5);
+}
+
+.footer-disclaimer {
+    width: 100%;
+    padding: 100px 20px 50px 20px;
+    text-align: center;
+    box-sizing: border-box;
+    cursor: default;
+}
+
+.footer-content {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 300;
+    letter-spacing: 0.2rem;
+    color: rgba(255, 255, 255, 0.4); /* Faded look */
+    line-height: 2;
+    text-transform: uppercase;
+    max-width: 800px;
+    margin: 0 auto;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 40px;
+}
