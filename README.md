@@ -8,7 +8,7 @@ An interactive and visually immersive web project inspired by anamorphic design 
 
 Check out the project here:  
 <br>
-https://github.com/SanjayLadumor/Anamorphic
+https://sanjayladumor.github.io/Anamorphic/
 
 ---
 
